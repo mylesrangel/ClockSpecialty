@@ -1,24 +1,28 @@
 
-const fetch = require('node-fetch');
-const cheerio = require('cheerio');
+const express = require('express');
 
-//Digital Image Gallery useful for searching and getting: Lists and pictures
-const digSearchUrl = "https://digitalimagegallery.howardmiller.com/search?s=";
+const scraper = require('./scraper.js')
+
+const app = express();
 
 
-function searchInventory(searchTerm){
-	///TODO: create a list of search terms to check (incorrect:'floor clock' correct: 'floor clocks')
-	return fetch(`${digSearchUrl}${searchTerm}`)
-		.then(response => response.text())
+app.get('/', (req, res) =>{
+	res.json({
+		Message: "Lets do this, Man"
+	})
+});
 
-}
+app.get('/search/:searchTerm',(req,res) =>{
 
-searchInventory('floor clocks')
-	.then(body => {
-		const $ = cheerio.load(body);
-			$('.Grid-cell').each(function(i,element){
-				$element = $(element);
-				$image = $(element).find('.Image-img img').attr('src');
-				console.log($image);
-			});
+	scraper.searchInventory(req.params.searchTerm)
+	.then(results => {
+		res.json(results);
 	});
+});
+
+
+const port = process.env.PORT || 3000;
+
+app.listen(port, () =>{
+	console.log(`Listening on ${port}`);
+});
