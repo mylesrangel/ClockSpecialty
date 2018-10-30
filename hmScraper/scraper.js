@@ -59,8 +59,9 @@ function getClock(SKU){
 		const $ = cheerio.load(body);
 
 
-		$clockInfo = $(`.ProductInfo-value`);
-		$clockDesc = $('.ProductInfo-value li');
+		const $clockInfo = $('.ProductInfo-value');
+		const $clockDesc = $('.ProductInfo-value li');
+		const clockImg = $('.Image--solo img').attr('src');
 
 
 		clockInformation = [];
@@ -78,17 +79,12 @@ function getClock(SKU){
 		$clockDesc.each(function(i, element){
 
 			const clockInfoTemp = $(element).text();
-
-			console.log("Li Element: " + clockInfoTemp);
-			clockDescription.push(clockInfoTemp);
-			
+			clockDescription.push(clockInfoTemp);		
 		});
-
-
-
 
 		return {
 			SKU,
+			clockImg,
 			clockInformation,
 			clockDescription
 
