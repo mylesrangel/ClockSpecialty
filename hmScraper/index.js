@@ -20,6 +20,15 @@ app.get('/search/:searchTerm',(req,res) =>{
 	});
 });
 
+app.get('/clock/:SKU',(req,res) =>{
+
+	scraper.getClock(req.params.SKU)
+	.then(results => {
+
+		res.json(results);
+	});
+
+});
 
 const port = process.env.PORT || 3000;
 
