@@ -12,8 +12,12 @@
   "license": "ISC",
   "dependencies": {
     "cheerio": "^1.0.0-rc.2",
+    "cors": "^2.8.4",
     "express": "^4.16.4",
     "node-fetch": "^2.2.0",
     "nodemon": "^1.18.5"
+  },
+  "devDependencies": {
+    "now": "^11.4.6"
   }
 }

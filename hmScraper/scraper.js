@@ -12,6 +12,8 @@ const digSearchUrl = "https://digitalimagegallery.howardmiller.com/search?s=";
 const fetch = require('node-fetch');
 const cheerio = require('cheerio');
 
+
+
 function searchInventory(searchTerm){
 	///TODO: create a list of search terms to check (incorrect:'floor clock' correct: 'floor clocks')
 	return fetch(`${digSearchUrl}${searchTerm}`)
@@ -20,17 +22,25 @@ function searchInventory(searchTerm){
 			const searchResults = [];
 			const $ = cheerio.load(body);
 			$('.Grid-cell').each(function(i,element){
+
+				///TODO: "More" button on bottom of search page. Click it? Ignore it?
+
 				$element = $(element);
 
 				$image = $(element).find('.Image-img img').attr('src'); //gets reference to image
 				$sku = $image.match(/jpg\/(.*).jpg/)[1];
 
+
+				//TODO: exclude the values that have or _b or _c at the bottom
+				//retrieves the Kieninger format for clocks
+				console.log($sku.match(/(.*)-(.*)-(.*)/g));
 				
 				///NOTE: indexOf returns -1 if it never finds the value, else it returns the index position of the value
 				///check if image has underscore in its value, exclude if it does (alternate picture)
 				///TODO: check if last indexs are -02 (just in case of a 1083-02-02)
 				if( ($sku.indexOf("_") == -1) && ($sku.indexOf("-02") == -1) && ($sku.indexOf("-03") == -1) ){
-					console.log('Didnt find a _ or a -02 or -03 in: ' + $sku );
+
+					///TODO: if $sku has a -01 at the end of it, remove the -01 after the end (its an alternate picture)
 
 					const result = {
 						$image,
@@ -39,11 +49,8 @@ function searchInventory(searchTerm){
 
 					searchResults.push(result);
 
-				}else{
-
-					console.log('Found a _ or a -02 or a -03 in: '  + $sku);
 				}
-		
+
 			});
 			return searchResults;
 
