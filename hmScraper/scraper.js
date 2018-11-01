@@ -25,36 +25,60 @@ function searchInventory(searchTerm){
 
 				///TODO: "More" button on bottom of search page. Click it? Ignore it?
 
-				//$element = $(element);
+				//LEFTOFF: double check values, kFormat might be a little different than expected, sku seems okay (double check) 
+				const $image = $(element).find('.Image-img img').attr('src'); //gets reference to image
+				const $sku = $image.match(/jpg\/(.*).jpg/)[1];
 
-				$image = $(element).find('.Image-img img').attr('src'); //gets reference to image
-				$sku = $image.match(/jpg\/(.*).jpg/)[1];
-
-
-				//TODO: exclude the values that have or _b or _c at the bottom
 				//retrieves the Kieninger format for clocks
-				console.log($sku.match(/(.*)-(.*)-(.*)/g));
-				
+				let kFormat = $sku.match(/(.*)-(.*)-(.*)/g);
+				//if the kformat matches the correct format for Kienger
+				console.log("\nActual Sku: " + $sku);
+
+				if(kFormat){
+
+					//if kFormat has '_a ' at the end, remove the _a
+					kFormat = $sku.replace(/_a+/g, "");
+
+					if((kFormat.lastIndexOf("b") == -1) && (kFormat.lastIndexOf("c") == -1)&& (kFormat.lastIndexOf("d") == -1)){
+						
+						const result = {
+							$image,
+							$sku
+						};
+					}
+
 				///NOTE: indexOf returns -1 if it never finds the value, else it returns the index position of the value
 				///check if image has underscore in its value, exclude if it does (alternate picture)
-				///TODO: check if last indexs are -02 (just in case of a 1083-02-02)
-				if( ($sku.indexOf("_") == -1) && ($sku.indexOf("-02") == -1) && ($sku.indexOf("-03") == -1) ){
+				}else if($sku){
 
-					///TODO: if $sku has a -01 at the end of it, remove the -01 after the end (its an alternate picture)
+					let sku = $sku;
 
-					const result = {
-						$image,
-						$sku
-					};
+					console.log("Sku before replace: " + sku);
 
-					searchResults.push(result);
+					//if sku has '-01' at the end, remove the -01
+					sku = sku.replace(/_a+/g, "");
 
+
+					console.log("Sku after replace: " + sku);
+
+					//NOTE: this excludes the Klienger formats found in sku
+					if((sku.indexOf("_") == -1) && (sku.indexOf("-02") == -1) && (sku.indexOf("-03") == -1)){
+
+						console.log("Sku for insert: " + sku);
+
+						///TODO: if $sku has a -01 at the end of it, remove the -01 after the end (its an alternate picture)
+						const result = {
+							$image,
+							$sku
+						};
+					}
 				}
-
-			});
+				//searchResults.push(result);
+			})
+			
 			return searchResults;
 
-		});
+		})
 }
 
 function getClock(SKU){
@@ -63,6 +87,7 @@ function getClock(SKU){
 	return fetch(`${clockDescriptionURL}${SKU}`)
 	.then(response => response.text())
 	.then(body => {
+
 		const $ = cheerio.load(body);
 
 
