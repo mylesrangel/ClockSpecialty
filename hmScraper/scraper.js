@@ -25,7 +25,7 @@ function searchInventory(searchTerm){
 
 				///TODO: "More" button on bottom of search page. Click it? Ignore it?
 
-				$element = $(element);
+				//$element = $(element);
 
 				$image = $(element).find('.Image-img img').attr('src'); //gets reference to image
 				$sku = $image.match(/jpg\/(.*).jpg/)[1];
