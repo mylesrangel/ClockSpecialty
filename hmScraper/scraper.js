@@ -47,11 +47,13 @@ function searchInventory(searchTerm){
 
 					if((kFormat.indexOf("_") == -1)){
 						
+						sku = kFormat;
+
 						console.log("formatted kFormat ready for insert: " + kFormat);
 
 						result = {
 							$image,
-							$sku
+							sku
 						};
 					}
 
@@ -70,14 +72,14 @@ function searchInventory(searchTerm){
 					console.log("Sku after replace: " + sku);
 
 					//NOTE: this excludes the Klienger formats found in sku
-					if((sku.indexOf("_") == -1)){
+					if((sku.indexOf("_") == -1) && (sku.indexOf("-") == -1)){
 
-						console.log("Sku for insert: " + sku);
+						console.log("Sku for insert:: " + sku);
 
 						///TODO: if $sku has a -01 at the end of it, remove the -01 after the end (its an alternate picture)
 						result = {
 							$image,
-							$sku
+							sku
 						};
 					}
 				}
@@ -85,6 +87,7 @@ function searchInventory(searchTerm){
 				//remove the null returns
 				if(result){
 				searchResults.push(result);
+				result = null;
 				}
 			})
 			

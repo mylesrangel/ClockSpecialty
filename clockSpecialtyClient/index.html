@@ -2,11 +2,52 @@
 <html>
 <head>
 	<title>Clock Specialty</title>
+
+	<!--   Simplex Theme   -->
 	<link rel="stylesheet" href="https://bootswatch.com/4/simplex/bootstrap.min.css">
 
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+
+	<script>
+		$(function(){
+			$('#headerHere').load("header.html");
+		});
+	</script>
+	<style type="text/css">
+		main{
+			margin-top: 2em;
+		}
+		li{
+			list-style: none;
+			font-size: large;
+			margin-top: 1em;
+
+		}
+	</style>
+
+	
 
 </head>
 <body>
+
+	<div id="headerHere"></div>
+	
+	<script type="text/javascript" 
+  src="./header.js"></script>
+
+
+	<main class="container">
+		<form>
+			<fieldset>
+				<label for="search"> Search </label>
+				<input type="text" class="form-control" id="search" placeholder="Search for Clocks e.g. 'floor clocks'"> </input>
+			</fieldset>
+			<button type="submit" class="btn btn-primary">Submit</button>
+		</form>
+		<ul class="list-group" id="results">
+		</ul>
+	</main>
+<script type="text/javascript" src="./app.js"></script>
 
 </body>
 </html>
