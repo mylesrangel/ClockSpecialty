@@ -31,17 +31,25 @@ function searchInventory(searchTerm){
 
 				//retrieves the Kieninger format for clocks
 				let kFormat = $sku.match(/(.*)-(.*)-(.*)/g);
+
+				let result;
+
 				//if the kformat matches the correct format for Kienger
 				console.log("\nActual Sku: " + $sku);
+				console.log("Actual kFormat: " + kFormat);
 
 				if(kFormat){
 
 					//if kFormat has '_a ' at the end, remove the _a
 					kFormat = $sku.replace(/_a+/g, "");
 
-					if((kFormat.lastIndexOf("b") == -1) && (kFormat.lastIndexOf("c") == -1)&& (kFormat.lastIndexOf("d") == -1)){
+					console.log("formatted kFormat: " + kFormat);
+
+					if((kFormat.indexOf("_") == -1)){
 						
-						const result = {
+						console.log("formatted kFormat ready for insert: " + kFormat);
+
+						result = {
 							$image,
 							$sku
 						};
@@ -62,18 +70,22 @@ function searchInventory(searchTerm){
 					console.log("Sku after replace: " + sku);
 
 					//NOTE: this excludes the Klienger formats found in sku
-					if((sku.indexOf("_") == -1) && (sku.indexOf("-02") == -1) && (sku.indexOf("-03") == -1)){
+					if((sku.indexOf("_") == -1)){
 
 						console.log("Sku for insert: " + sku);
 
 						///TODO: if $sku has a -01 at the end of it, remove the -01 after the end (its an alternate picture)
-						const result = {
+						result = {
 							$image,
 							$sku
 						};
 					}
 				}
-				//searchResults.push(result);
+
+				//remove the null returns
+				if(result){
+				searchResults.push(result);
+				}
 			})
 			
 			return searchResults;
