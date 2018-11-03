@@ -3,7 +3,8 @@ const form = document.querySelector('form');
 const searchInput = document.querySelector('input');
 const resultsList = document.querySelector('#results');  //get ID 
 
-const BASE_URL = 'https://clockspecialty.now.sh';
+const BASE_URL = 'https://clockspecialtyback.now.sh';
+const LIVE_URL = 'https://clockspecialty.now.sh';
 
 form.addEventListener('submit' , formSubmitted);
 
@@ -31,8 +32,8 @@ function showResults(results){
 		const li = document.createElement('li');
 		const img = document.createElement('img');
 		const a = document.createElement('a');
-		
-		a.href = '/clock.html?sku=' + clock.sku;
+
+		a.href = '/clock?sku=' + clock.sku;
 		li.appendChild(a);
 		img.src= clock.$image;
 		a.appendChild(img);

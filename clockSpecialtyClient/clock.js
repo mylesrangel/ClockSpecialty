@@ -2,11 +2,14 @@
 const main = document.querySelector('main');
 //from URL grab anything after 'sku=''
 const sku = (window.location.search.match(/sku=(.*)/)[1]);
-const BASE_URL = 'https://clockspecialty.now.sh';
+const BASE_URL = 'https://clockspecialtyback.now.sh';
 
 let html = "";
 
 function getClock(sku){
+
+	console.log("getClock: " +sku);
+
 	return fetch(`${BASE_URL}/clock/${sku}`)
 		.then(res => res.json())
 }
@@ -18,8 +21,7 @@ function showClock(clock){
 
 	console.log(clock);
 
-	console.log
-
+	//put the clocks description into li elements vs block text
 	clock.clockDescription.forEach(value => {
 
 		if(value){
@@ -31,7 +33,6 @@ function showClock(clock){
 
 	section.outerHTML = `
 	
-
 		<section class="row">
 			<h1 class = "text-center"> ${clock.clockInformation[1]} </h1>
 			<div class = "col-sm-6">
