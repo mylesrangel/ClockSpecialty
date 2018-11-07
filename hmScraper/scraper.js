@@ -13,8 +13,17 @@ const fetch = require('node-fetch');
 const cheerio = require('cheerio');
 
 
+//Cache objects
+const searchClocksCache = {};
+const clockCache = {};
 
 function searchInventory(searchTerm){
+
+	if(searchClocksCache[searchTerm]){
+		console.log("Serving from Cache: " + searchTerm);
+		return Promise.resolve(searchClocksCache[searchTerm]);
+	}
+
 	///TODO: create a list of search terms to check (incorrect:'floor clock' correct: 'floor clocks')
 	return fetch(`${digSearchUrl}${searchTerm}`)
 		.then(response => response.text())
@@ -25,7 +34,6 @@ function searchInventory(searchTerm){
 
 				///TODO: "More" button on bottom of search page. Click it? Ignore it?
 
-				//LEFTOFF: double check values, kFormat might be a little different than expected, sku seems okay (double check) 
 				const $image = $(element).find('.Image-img img').attr('src'); //gets reference to image
 				const $sku = $image.match(/jpg\/(.*).jpg/)[1];
 
@@ -57,7 +65,7 @@ function searchInventory(searchTerm){
 						};
 					}
 
-				///NOTE: indexOf returns -1 if it never finds the value, else it returns the index position of the value
+				///NOTE: indexOf returns -1 if it never finds the value
 				///check if image has underscore in its value, exclude if it does (alternate picture)
 				}else if($sku){
 
@@ -65,8 +73,9 @@ function searchInventory(searchTerm){
 
 					console.log("Sku before replace: " + sku);
 
-					//if sku has '-01' at the end, remove the -01
-					sku = sku.replace(/_a+/g, "");
+					//if sku has '_a' at the end, remove the _a
+					//NOTE: this might be creating Duplicates
+					//sku = sku.replace(/_a+/g, "");
 
 
 					console.log("Sku after replace: " + sku);
@@ -76,14 +85,12 @@ function searchInventory(searchTerm){
 
 						console.log("Sku for insert:: " + sku);
 
-						///TODO: if $sku has a -01 at the end of it, remove the -01 after the end (its an alternate picture)
 						result = {
 							$image,
 							sku
 						};
 					}
 				}
-
 				//remove the null returns
 				if(result){
 				searchResults.push(result);
@@ -91,12 +98,19 @@ function searchInventory(searchTerm){
 				}
 			})
 			
+			searchClocksCache[searchTerm] = searchResults;
 			return searchResults;
 
 		})
 }
 
 function getClock(SKU){
+
+		if(clockCache[SKU]){
+		console.log("Serving from Cache: " + SKU);
+		return Promise.resolve(clocksCache[SKU]);
+	}
+
 
 
 	return fetch(`${clockDescriptionURL}${SKU}`)
@@ -129,13 +143,16 @@ function getClock(SKU){
 			clockDescription.push(clockInfoTemp);		
 		});
 
-		return {
+		const clock = {
 			SKU,
 			clockImg,
 			clockInformation,
 			clockDescription
 
 		}
+
+		clockCache[SKU] = clock;
+		return clock;
 	});
 
 }
