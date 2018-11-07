@@ -106,12 +106,10 @@ function searchInventory(searchTerm){
 
 function getClock(SKU){
 
-		if(clockCache[SKU]){
+	if(clockCache[SKU]){
 		console.log("Serving from Cache: " + SKU);
-		return Promise.resolve(clocksCache[SKU]);
+		return Promise.resolve(clockCache[SKU]);
 	}
-
-
 
 	return fetch(`${clockDescriptionURL}${SKU}`)
 	.then(response => response.text())

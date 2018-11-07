@@ -33,7 +33,7 @@ function showResults(results){
 		const img = document.createElement('img');
 		const a = document.createElement('a');
 
-		a.href = '/clock?sku=' + clock.sku;
+		a.href = '/clock.html?:sku=' + clock.sku;
 		li.appendChild(a);
 		img.src= clock.$image;
 		a.appendChild(img);

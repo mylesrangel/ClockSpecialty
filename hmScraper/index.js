@@ -24,7 +24,6 @@ app.get('/clock/:SKU',(req,res) =>{
 
 	scraper.getClock(req.params.SKU)
 	.then(results => {
-
 		res.json(results);
 	});
 
