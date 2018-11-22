@@ -74,10 +74,8 @@ function searchInventory(searchTerm){
 					console.log("Sku before replace: " + sku);
 
 					//if sku has '_a' at the end, remove the _a
-					//NOTE: this might be creating Duplicates
+					//NOTE: this might be creating Duplicates (it was)
 					//sku = sku.replace(/_a+/g, "");
-
-
 					console.log("Sku after replace: " + sku);
 
 					//NOTE: this excludes the Klienger formats found in sku
@@ -116,7 +114,6 @@ function getClock(SKU){
 	.then(body => {
 
 		const $ = cheerio.load(body);
-
 
 		const $clockInfo = $('.ProductInfo-value');
 		const $clockDesc = $('.ProductInfo-value li');
