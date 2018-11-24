@@ -36,6 +36,14 @@ function showResults(results){
 		}
 	}
 
+	//if results only has one result just go to that page
+	if(results.length == 1){
+		console.log("only has one result " + results[0].sku);
+		//Similar to being clicked
+		window.location.href = '/clock.html?:sku=' + results[0].sku;
+	}
+
+
 	results.forEach(clock => {
 		const li = document.createElement('li');
 		const img = document.createElement('img');
