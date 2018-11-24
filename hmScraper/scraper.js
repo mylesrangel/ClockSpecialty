@@ -96,6 +96,7 @@ function searchInventory(searchTerm){
 				}
 			})
 			
+			// put the search results in the cache and return them to client
 			searchClocksCache[searchTerm] = searchResults;
 			return searchResults;
 

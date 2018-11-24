@@ -6,6 +6,7 @@ const resultsList = document.querySelector('#results');  //get ID
 const BASE_URL = 'https://clockspecialtyback.now.sh';
 const LIVE_URL = 'https://clockspecialty.now.sh';
 
+//search bar event listener
 form.addEventListener('submit' , formSubmitted);
 
 function formSubmitted(event){
@@ -27,6 +28,13 @@ function getSearchResults(searchTerm){
 }
 
 function showResults(results){
+
+	//removes previous search results list
+	if(resultsList.hasChildNodes()){
+		while(resultsList.hasChildNodes()){
+			resultsList.removeChild(resultsList.childNodes[0]);
+		}
+	}
 
 	results.forEach(clock => {
 		const li = document.createElement('li');
