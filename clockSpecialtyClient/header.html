@@ -1,24 +1,33 @@
-  <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
-    <a class="navbar-brand" id="title" href="#">Clock Specialty</a>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-primary .container-fluid row">
 
-    <div class="collapse navbar-collapse" id="navbarColor01">
-      <ul class="navbar-nav mr-auto">
-        <li class="nav-item active">
-          <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Features</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Pricing</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">About</a>
-        </li>
-      </ul>
-      <form class="form-inline my-2 my-lg-0">
-          <input class="form-control mr-sm-2" id= "search" type="text" placeholder="Search for Clocks"> </input>
-        <button class="btn btn-secondary my-2 my-sm-0" type="submit">Search</button>
-      </form>
-    </div>
+      <div class="navbar-header col-3">
+        <a class="navbar-brand" id="title" href="#">Clock Specialty</a>
+      </div>  
+      <div class="col-5 form-inline justify-content-center" id="searchBar">
+        <form class="form-inline my-2 my-sm-0 justify-content-center">
+              <input class="form-control mr-sm-2 col-8" id= "search" type="text" placeholder=""> </input>
+              <button class="btn btn-secondary my-2 my-sm-0 btn-sm" type="submit">Search</button>
+          </form>
+      </div>
+       <!-- Button for smaller screens (mobile)   -->
+      <button type="button" class="navbar-toggler ml-auto" data-toggle="collapse" data-target="#mainNavBar">
+        <span class="navbar-toggler-icon"></span> 
+      </button>
+        <div class="collapse navbar-collapse navbar-default col-4 justify-content-center" id="mainNavBar">
+          <ul class="nav navbar-nav ml-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Features</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Pricing</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">About</a>
+            </li>
+          </ul>
+        </div>
+       
   </nav>
