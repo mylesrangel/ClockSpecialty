@@ -14,101 +14,13 @@
 	<!--   Simplex Theme   -->
 	<link rel="stylesheet" href="https://bootswatch.com/4/simplex/bootstrap.min.css">
 
-
-	<style type="text/css">
-
-		body{
-			background-color: #FFF;
-		}
-
-		main{
-			margin-top: 2em;
-		}
-		li{
-			list-style: none;
-			font-size: large;
-			display: inline-block;
-			margin-top: 1em;
-		}
-		.form-inline{
-			width: 100%;
-		}
-		#title {
-			font-size: x-large;
-		}
-		div#searchBar{
-			justify-content: center;
-		}
-		#searchBar button{
-			margin-left: .5em
-		}
-
-		ul#results{
-
-			background-color: #FFF;
-			display: inherit;
-			columns: 3;
-			-webkit-columns: 3;
-  			-moz-columns: 3;
-		}
-
-
-
-		/* */
-		@media (max-width: 1000px){
-
-			main{
-				margin-top: 2em;
-			}
-			li{
-				list-style: none;
-				font-size: large;
-				margin-top: 1em;
-
-			}
-			.form-inline{
-				flex-flow: nowrap;
-			}
-
-			#title {
-				font-size: large;
-			}
-			div#searchBar{
-				margin-left: 2em;
-			}
-			#searchBar button{
-				margin-left: .5em
-			}
-			/*#Results UL*/
-			ul#results{
-			text-align: center;
-			background-color: #FFF;
-			display: inherit;
-			columns: 2;
-			-webkit-columns: 2;
-  			-moz-columns: 2;
-
-			}
-			img{
-				width: 100%;
-			}
-		}
-
-
-	</style>
-
-	
+	<link rel="stylesheet" href="/custom.css"> 
 
 </head>
 <body>
-	
- 	<script>
-		$(document).ready(function(){
-			$('#headerHere').load("header.html");
-		});
-	</script>
 
 	<div id="headerHere"></div>
+
 
 
 	<main class="container">		
@@ -119,10 +31,47 @@
 			</fieldset>
 			<button type="submit" class="btn btn-primary">Submit</button>
 		</form> -->
+
 		<ul class="list-group" id="results">
 		</ul>
 	</main>
-<script type="text/javascript" src="./app.js"></script>
+
+	<div id="footerHere"></div> 
+
+	
+	<!-- TODO: Need to have header.html load before ./app.js (seems to be a pain in the ass) this will hopefully allow 'form' to be seen in app.js (hopefully)  -->
+
+	<!--<script>
+		$.when( $.ready, $.getScript("./app.js")).then(function() {
+
+	    	// the document is ready and optional.js has loaded/run
+	    	console.log("running .when");
+		}).catch( function() {
+	  		// an error occurred
+		});
+	</script>
+
+	<script>
+		$(window).on("load", function(){
+			console.log("window loaded");
+		})
+	</script>
+
+	<script>
+		$(document).ready(function(){
+			console.log("running .load()");
+			$('#headerHere').load("header.html");
+
+		});
+	</script> -->
+
+	
+
+	<script defer type="text/javascript" src="./header.js"></script>
+
+
+
+
 
 </body>
 </html>
