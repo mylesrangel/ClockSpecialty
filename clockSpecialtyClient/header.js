@@ -1,4 +1,5 @@
 
+console.log("header loaded");
 
 $('#headerHere').load("./header.html", function (res,status,xhr){
 	

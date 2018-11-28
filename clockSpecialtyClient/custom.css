@@ -1,6 +1,8 @@
 
 	<style type="text/css">
 	
+
+	/*Header styles (and a dash of the body*/
 		body{
 			background-color: #FFF;
 		}
@@ -76,6 +78,24 @@
 			img{
 				width: 100%;
 			}
+		}
+
+		/*Footer styles*/
+
+		#footerHere nav{
+			display: inline;
+		}
+
+		#footerHere nav.navbar{
+			text-align: center;
+			
+		}
+
+		#footerHere .navbar-nav{
+			display: inline-block;
+		}
+		#footerHere a.nav-link{
+			margin-left: 1em;
 		}
 
 
