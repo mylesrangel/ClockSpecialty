@@ -22,20 +22,23 @@
 		#title {
 			font-size: x-large;
 		}
-		div#searchBar{
+		div #searchBar{
 			justify-content: center;
 		}
 		#searchBar button{
 			margin-left: .5em
 		}
 
-		ul#results{
+		ul #results{
 
 			background-color: #FFF;
 			display: inherit;
 			columns: 3;
 			-webkit-columns: 3;
   			-moz-columns: 3;
+		}
+		div #mainNavBar a{
+			text-align: center;
 		}
 
 
@@ -59,14 +62,14 @@
 			#title {
 				font-size: large;
 			}
-			div#searchBar{
+			div #searchBar{
 				margin-left: 2em;
 			}
 			#searchBar button{
 				margin-left: .5em
 			}
 			/*#Results UL*/
-			ul#results{
+			ul #results{
 			text-align: center;
 			background-color: #FFF;
 			display: inherit;

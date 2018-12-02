@@ -1,13 +1,11 @@
 
-console.log("header loaded");
-
 $('#headerHere').load("./header.html", function (res,status,xhr){
 	
     if(status != "error"){
-    	console.log("no error");
     	const form = document.querySelector('form');
 		const searchInput = document.querySelector('input');
-		const resultsList = document.querySelector('#results');  //get ID 
+		const mainNavBar = document.querySelector('#mainNavBar');
+		const resultsList = document.querySelector('#results');  //get ID
 
 		const BASE_URL = 'https://clockspecialtyback.now.sh';
 		const LIVE_URL = 'https://clockspecialty.now.sh';
@@ -15,6 +13,19 @@ $('#headerHere').load("./header.html", function (res,status,xhr){
 
 		//search bar event listener
 		form.addEventListener('submit' , formSubmitted);
+
+		//Event listener for links in main Nav Bar
+		//Take the id and send it to displayContent
+		mainNavBar.addEventListener('click', function(event){
+			event.preventDefault();
+			console.log("eventListener");
+			var pageClicked = event.target.id;
+
+			if(pageClicked != 'mainNavBar'){
+
+				$('.container').load("./"+pageClicked + ".html");
+			}
+		});
 
 		function formSubmitted(event){
 			event.preventDefault();
@@ -66,7 +77,6 @@ $('#headerHere').load("./header.html", function (res,status,xhr){
 			});
 		}
 	}
-
 });
 
 
