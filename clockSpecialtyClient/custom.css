@@ -1,10 +1,11 @@
 
 	<style type="text/css">
 	
-
 	/*Header styles (and a dash of the body*/
 		body{
 			background-color: #FFF;
+			margin-left: 8em;
+			margin-right: 8em;
 		}
 
 		main{
