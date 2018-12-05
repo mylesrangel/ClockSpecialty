@@ -10,6 +10,8 @@
 
 		html{
 			height: 100%;
+			padding-left: 100px;
+			padding-right: 100px;
 		}
 	
 		body{
@@ -18,18 +20,30 @@
 		}
 
 		main{
-			min-height: 73.5%;  /*size of main when there isn't enough content */
+			min-height: 73%;  /*size of main when there isn't enough content */
 			padding-bottom: 50px /*size of space between main and footer */
-
 		}
 
 		h1,h5{
 			margin-top: 2em;
 			text-align: center;
 		}
-
+		#headerHere .navbar{
+			border: none;
+			border-bottom: 1px solid red;
+		}
 		#cardContainer{
 			margin-top: 5em;
+		}
+		
+
+		div .card{
+			border: none;
+
+		}
+		div .card img{
+			width: 400px;
+			height: 400px;
 		}
 
 		li{
@@ -109,11 +123,6 @@
 
 		/*Footer styles*/
 
-		footer{
-
-
-		}
-
 		#footerHere nav{
 			background-color: #FFF;
 		}
@@ -123,6 +132,10 @@
 			clear: both;
 			text-align: center;
 			position: relative;	
+		}
+		#footerHere .navbar{
+			border: none;
+			border-top: 1px solid red;
 		}
 
 		#footerHere .navbar-nav{

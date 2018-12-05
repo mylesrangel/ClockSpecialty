@@ -23,7 +23,7 @@ app.get('/search/:searchTerm',(req,res) =>{
 app.get('/clock/:SKU',(req,res) =>{
 
 	scraper.getClock(req.params.SKU)
-	.then(results => {
+	.then(results => { 
 		res.json(results);
 	});
 
