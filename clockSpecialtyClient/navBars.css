@@ -15,35 +15,89 @@
 		}
 	
 		body{
-			background-color: #FFF;
 			height: 100%;
 		}
 
 		main{
 			min-height: 73%;  /*size of main when there isn't enough content */
-			padding-bottom: 50px /*size of space between main and footer */
+			/*padding-bottom: 50px size of space between main and footer */
+			/*background-color: #EAEDED;
+			background-image: url("./media/backgroundImageTwo.jpg");
+			background-repeat: no-repeat; */
+
+		}
+		main.container{
+			display: block;
+			margin: 0;
+			padding: 20px;
+			min-width: 100%;
+			/*background-color: #6E6E6E; 
+			border-top: 2em solid #6E6E6E; /*using this for the margin */
+			/*border-bottom: 2em solid #6E6E6E;*/
+
 		}
 
-		h1,h5{
-			margin-top: 2em;
+		h1{
+			margin-bottom: 1em;
 			text-align: center;
+		}
+		h5{
+			text-align: center;
+			margin-bottom: 2em;
 		}
 		#headerHere .navbar{
 			border: none;
 			border-bottom: 1px solid red;
 		}
+
+		table .cardContent{
+			background-color: #6E6E6E;
+			display: table-cell;
+			text-align: center;
+			vertical-align: middle;
+			width: 50%;
+
+		}
+		i{
+			font-size: 48px;
+			display: block;
+			margin: auto;
+			margin-top: 1em;
+		}
+
+		table .cardRow{
+			background-color: 	#b5a642;
+		}
+		table .cardRow:hover{
+			opacity: .85;
+			-moz-box-shadow:0 0 25px 0 #be3627;
+			-webkit-box-shadow:2 2 25px 0 #be3627;
+			box-shadow:0 0 55px 0 #be3627;;
+
+		}
 		#cardContainer{
-			margin-top: 5em;
-		}
-		
 
+			min-width: 100%;
+		}
 		div .card{
-			border: none;
+			min-width: 31%;
+			width:100%;
+  			height:auto
 
 		}
-		div .card img{
-			width: 400px;
-			height: 400px;
+
+		div .card:hover{
+			opacity: .8  5;
+			-moz-box-shadow:0 0 25px 0 #be3627;
+			-webkit-box-shadow:2 2 25px 0 #be3627;
+			box-shadow:0 0 55px 0 #be3627;;
+			transition: width 2s, height 4s;
+
+
+		}
+		table .spacer{
+			height: 10px;
+			background-color: #6E6E6E;
 		}
 
 		li{
@@ -55,14 +109,16 @@
 		.form-inline{
 			width: 100%;
 		}
-		#title {
+		#index { /* Title */
 			font-size: x-large;
 		}
 		div #searchBar{
 			justify-content: center;
+
 		}
 		#searchBar button{
 			margin-left: .5em
+
 		}
 
 		ul #results{
@@ -78,7 +134,7 @@
 		}
 
 		/* */
-		@media (max-width: 1000px){
+		@media (max-width: 1050px){
 
 			main{
 				margin-top: 2em;
@@ -94,7 +150,7 @@
 				flex-flow: nowrap;
 			}
 
-			#title {
+			#index {
 				font-size: large;
 			}
 			div #searchBar{
@@ -124,7 +180,8 @@
 		/*Footer styles*/
 
 		#footerHere nav{
-			background-color: #FFF;
+
+
 		}
 
 		#footerHere nav.navbar{

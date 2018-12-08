@@ -6,9 +6,6 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>Clock Specialty</title>
 
-
-
-
 	<!--   Simplex Theme   -->
 	<link rel="stylesheet" href="https://bootswatch.com/4/simplex/bootstrap.min.css">
 
@@ -20,21 +17,62 @@
 
 	<div id="headerHere"></div>
 
-	<main class="container text-primary">	
+	<main class="container text-primary mx-auto">	
 
-		<h1> What can we help you with? </h1>	
 
-		<div class="container row justify-content-center" id="cardContainer">		
-			<div class="card col-4 mr-2.5">
-			  <h5 class="card-title">I need a new clock</h5>
-			  <img class="card-img-top" src="./media/purchaseClock.jpg" alt="Card image cap">
+	<!-- Option 1 -->
+		<h1 class="text-primary"> What can we help you with? </h1>	
+
+
+		<!-- each card has same id for the eventlistner in .js -->
+		<div class="container row  mx-auto" id="cardContainer">
+			<div class="card col-3 mr-4 mx-auto" id="purchaseClock">
+			  <img class="card-img-top .img-fluid" id="purchaseClock" src="./media/purchaseClockResized.jpg" alt="Card image cap">
+			  <h5 class="card-title mt-3" id="purchaseClock">Find your perfect clock today!</h5>
 			</div>
 
-			<div class="card col-4 ml-2.5">
-			  <h5 class="card-title">I need to get my clock repaired</h5>
-			  <img class="card-img-top" src="./media/repairClock.jpg" alt="Card image cap">
+			<div class="card col-4 mr-4 mx-auto" id="repairClock">
+			  <img class="card-img-top .img-fluid" id="repairClock" src="./media/repairClockResized.jpg" alt="Card image cap">
+			  <h5 class="card-title mt-3" id="repairClock">I need to get my clock repaired</h5>
+			</div>
+			<div class="card col-3 mx-auto" id="somethingElse">
+			  <i class="em em-gear " id="somethingElse"></i>
+			  <h5 class="mt-3" id="somethingElse">I need something else</h5>
 			</div>
 		</div>
+
+
+		<!-- Option 2 
+
+		<table class="table justify-content-center">
+			<tr class="cardRow border-primary">
+				<td class="cardContent" id="newClock">
+				  <h1>I need to get a clock repaired </h1>
+				</td>
+				<td class="cardContent">
+					<img class=" w-100 img-fluid" src="./media/repairClock.jpg" >
+				</td>
+			</tr>
+			<tr class="spacer"> </tr>
+			<tr class="cardRow">
+				<td class="cardContent">
+					<img class=" w-100 img-fluid" src="./media/purchaseClock.jpg" >
+				</td>
+				<td class="cardContent" id="newClock">
+				  <h1>I need a new clock </h1>
+				</td>
+			</tr>
+			<tr class="spacer"> </tr>
+			<tr class="cardRow">
+				<td class="cardContent" id="newClock">
+				  <h1>I need a new clock </h1>
+				</td>
+				<td class="cardContent">
+					<img class=" w-100 img-fluid" src="./media/repairClock.jpg" >
+				</td>
+			</tr>
+			<tr class="spacer"> </tr>
+		</table>-->
 
 		<ul class="list-group" id="results">
 		</ul>
@@ -51,6 +89,7 @@
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 
+	<link href="https://afeld.github.io/emoji-css/emoji.css" rel="stylesheet">
 
 	<script defer type="text/javascript" src="./header.js"></script>
 	<script defer type="text/javascript" src="./footer.js"></script>
