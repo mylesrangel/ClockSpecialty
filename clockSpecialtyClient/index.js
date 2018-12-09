@@ -1,4 +1,3 @@
-console.log("index.js loaded");
 
 const cardSelection = document.querySelector('#cardContainer');
 
@@ -10,7 +9,7 @@ cardSelection.addEventListener('click', function(event){
 
 	if(cardClicked != undefined){
 
-		window.location.href = (cardClicked + ".html");
+		window.location.href = ("./mainPages/" + cardClicked + ".html");
 	}
 
 	console.log("event Listener " + cardClicked);
