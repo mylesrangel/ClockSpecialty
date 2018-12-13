@@ -12,6 +12,10 @@
 			height: 100%;
 			padding-left: 100px;
 			padding-right: 100px;
+			margin-left: 100px;
+			margin-right: 100px;
+/*			background-image: url("../media/backgroundPicThree.jpg");
+			background-repeat: no-repeat;*/
 		}
 	
 		body{
@@ -19,12 +23,14 @@
 		}
 
 		main{
-			min-height: 73%;  /*size of main when there isn't enough content */
+			min-height: 77%;  /*size of main when there isn't enough content */
 			/*padding-bottom: 50px size of space between main and footer */
-			/*background-color: #EAEDED;
-			background-image: url("./media/backgroundImageTwo.jpg");
-			background-repeat: no-repeat; */
+/*			background-image: url("../media/backgroundPicThree.jpg");
+			background-repeat: no-repeat;*/
 
+		}
+		img{
+			width: 100%;
 		}
 		main.container{
 			display: block;
@@ -38,6 +44,7 @@
 		}
 
 		h1{
+			width: 100%;
 			margin-bottom: 1em;
 			text-align: center;
 		}
@@ -77,16 +84,22 @@
 
 		}*/
 		#cardContainer{
-			margin-top: 2em;
+			padding-top: 6em;
 			min-width: 100%;
+			height: 100%;
 
 		}
+		div#cardContainer{
+			min-height: 100%;
+		}
 		#cardContainer h5{
-			
 			vertical-align: bottom;
 		}
+		.card{
+			margin-top: 2em;
+		}
 		div .card{
-			min-width: 25%;
+			min-width: 33%;
 			width:100%;
 		}
 
@@ -136,6 +149,7 @@
 		div #mainNavBar a{
 			text-align: center;
 		}
+
 
 		/* */
 		@media (max-width: 1050px){
