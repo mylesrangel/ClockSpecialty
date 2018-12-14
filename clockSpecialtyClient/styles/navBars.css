@@ -29,9 +29,6 @@
 			background-repeat: no-repeat;*/
 
 		}
-		img{
-			width: 100%;
-		}
 		main.container{
 			display: block;
 			margin: 0;
@@ -71,6 +68,13 @@
 			display: block;
 			margin: auto;
 			margin-top: 1em;
+		}
+		img{
+			width: 50%;
+			background-color: #FCFCFC;
+			margin-left: auto;
+			margin-right: auto;
+			display: block;
 		}
 
 /*		table .cardRow{

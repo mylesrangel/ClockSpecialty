@@ -2,47 +2,39 @@
 <html>
 <head>
 
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Clock Specialty</title>
+
+	<!--   Simplex Theme   -->
 	<link rel="stylesheet" href="https://bootswatch.com/4/simplex/bootstrap.min.css">
-<!-- 	<link rel="stylesheet" type="text/css" href="https://bootswatch.com/4/simplex/_bootswatch.scss"> -->
 
-	<style>
-
-		body{
-			background-color: #FFFFFF;
-		}
-		main{
-			margin-top: 2em;
-		}
-		img{
-			width: 100%;
-			height: 80%;
-		}
-		h1{
-			width: 100%;
-			margin-bottom: 2em;
-		}
-		li{
-			list-style: none;
-			margin-left: 1em;
-			margin-bottom: .1em;
-			font-size: large;
-		}
-	</style>
-
-
-
-
+	<link rel="stylesheet" href="/styles/navBars.css">
+	<!--<link rel="stylesheet" href = "/custom.css"> -->
 
 </head>
 <body>
-	<!-- Search Button -->
-	<main class="container">
-		<a href = "/" type="button" class="btn btn-primary"> Search </a>
+
+	<div id="headerHere"></div>
+
+	<main class="container text-primary mx-auto">	
+
 	</main>
 
-	<!-- Date Formatter -->
-	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/date-fns/1.29.0/date_fns.min.js"></script>
-	<script type="text/javascript" src="./clock.js"></script>
+	<footer id="footerHere"></footer>
+
 	
+	
+	<!-- scripts run in order -->
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+
+	<script defer type="text/javascript" src="../header/header.js"></script>
+	<script defer type="text/javascript" src="../footer/footer.js"></script>
+	<script type="text/javascript" src="./clock.js"></script>
+
 </body>
 </html>
