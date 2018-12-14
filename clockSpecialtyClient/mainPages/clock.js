@@ -29,8 +29,6 @@ function showClock(clock){
 		}
 	});
 
-	console.log(html);
-
 	section.outerHTML = `
 	
 		<section class="row">

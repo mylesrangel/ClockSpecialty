@@ -38,10 +38,6 @@
 		}
 
 
-		//counter for 3 items per row in a card
-
-		var counter = 0;
-
 		results.forEach(clock => {
 			const li = document.createElement('li');
 			const div = document.createElement('div');
@@ -56,6 +52,5 @@
 
 			resultsList.appendChild(div);
 
-			counter++;
 		});
 	}
