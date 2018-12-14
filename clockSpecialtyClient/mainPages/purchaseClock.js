@@ -1,6 +1,3 @@
-console.log("in purchaseClock.js");
-
-
 
 const cardClicked = document.querySelector("main");
 
