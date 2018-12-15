@@ -16,7 +16,7 @@ cardClicked.addEventListener("click", function(event){
 	}
 
 
-})
+});
 
 
 

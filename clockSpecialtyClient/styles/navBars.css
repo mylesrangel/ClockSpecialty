@@ -33,6 +33,7 @@
 			display: block;
 			margin: auto;
 			padding: 20px;
+/*			height: 75%;*/
 			/*max-width: 720px;*/
 
 		}
@@ -103,7 +104,24 @@
 			box-shadow:0 0 55px 0 #be3627;;
 			transition: width 2s, height 4s;
 		}
+		/*repairClock.html*/
+		.dropdown{
+			text-align: center;
+		}
 
+		.dropdown p{
+			text-align: inherit;
+			border: 0;
+			background-color: #FCFCFC !important;
+		}
+		#faqs{
+			width: 100%;
+			height: 100%;
+		}
+		/* this is a given element based on bootstraps .dropdown and .dropdown-menu*/
+		.show{
+			margin-bottom: 75px;
+		}
 
 		li{
 			list-style: none;
