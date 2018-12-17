@@ -105,6 +105,17 @@
 			transition: width 2s, height 4s;
 		}
 		/*repairClock.html*/
+		#questions{
+			border-bottom: 1px solid grey;
+		}
+
+		#questions h4{
+			text-align: center;
+		}
+		#answers h4{
+			text-align: center;
+		}
+
 		.dropdown{
 			text-align: center;
 		}
