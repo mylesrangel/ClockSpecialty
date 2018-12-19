@@ -48,20 +48,28 @@
 			text-align: center;
 			margin-bottom: 2em;
 		}
-
+		#title{
+			font-size: x-large;
+		}
 		#headerHere .navbar{
+			border: none;
+			
+		}
+		#headerHere{
 			border: none;
 			border-bottom: 1px solid red;
 		}
-
-		table .cardContent{
-			background-color: #6E6E6E;
-			display: table-cell;
-			text-align: center;
-			vertical-align: middle;
-			width: 50%;
-
+		#secondRow{
+			
 		}
+		#headerBlock{
+			display: block !important;
+			align-items: center;
+		}
+		#headerBlock p{
+			margin: 0;
+		}
+
 		i{
 			font-size: 48px;
 			display: block;
@@ -181,11 +189,14 @@
 				margin-top: 1em;
 
 			}
+			#headerBlock{
+				font-size: x-small;
+			}
 			.form-inline{
 				flex-flow: nowrap;
 			}
 
-			#index {
+			#title {
 				font-size: large;
 			}
 			div #searchBar{

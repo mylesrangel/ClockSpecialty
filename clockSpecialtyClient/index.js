@@ -7,7 +7,7 @@ cardSelection.addEventListener('click', function(event){
 
 	let cardClicked = event.target.id;
 
-	if(cardClicked != undefined){
+	if((cardClicked != undefined) && (cardClicked != "cardContainer") && (cardClicked != "")){
 
 		window.location.href = ("./mainPages/" + cardClicked + ".html");
 	}
