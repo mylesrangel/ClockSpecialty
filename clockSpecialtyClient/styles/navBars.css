@@ -24,7 +24,7 @@
 		}
 
 		main{
-			min-height: 77%;  /*size of main when there isn't enough content */
+			min-height: 64%;  /*size of main when there isn't enough content */
 /*			background-image: url("../media/backgroundPicThree.jpg");
 			background-repeat: no-repeat;*/
 
@@ -58,9 +58,6 @@
 		#headerHere{
 			border: none;
 			border-bottom: 1px solid red;
-		}
-		#secondRow{
-			
 		}
 		#headerBlock{
 			display: block !important;
@@ -230,6 +227,11 @@
 
 
 		}
+		#footerFirstRow{
+			border-top: 1px solid red;
+			text-align: center;
+			justify-content: center;
+		}
 
 		#footerHere nav.navbar{
 
@@ -239,7 +241,6 @@
 		}
 		#footerHere .navbar{
 			border: none;
-			border-top: 1px solid red;
 		}
 
 		#footerHere .navbar-nav{
