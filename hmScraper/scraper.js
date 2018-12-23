@@ -1,9 +1,5 @@
 
 
-//TODO: Remove?
-//Howard Miller site (maybe: description might be needed No GOOD)
-//const hmSearchUrl = "http://www.howardmiller.com/AjaxCatalogSearchView?storeId=12652&catalogId=13551&langId=-1&pageSize=12&beginIndex=0&sType=SimpleSearch&resultCatEntryType=2&showResultsPage=true&pageView=image&searchTermScope=1&searchTermCaseSensitive=no&categoryTermCaseSensitive=no&searchTerm=";
-
 const clockDescriptionURL = "https://digitalimagegallery.howardmiller.com/image/";
 
 //Digital Image Gallery useful for searching and getting: Lists and pictures
@@ -24,17 +20,22 @@ function searchInventory(searchTerm){
 		return Promise.resolve(searchClocksCache[searchTerm]);
 	}
 
+
 	///TODO: create a list of search terms to check (incorrect:'floor clock' correct: 'floor clocks')
 	return fetch(`${digSearchUrl}${searchTerm}`)
 		.then(response => response.text())
 		.then(body => {
 			const searchResults = [];
 			const $ = cheerio.load(body);
+			///TODO: "More" button on bottom of search page. Click it? Ignore it?
+			//NOTE: Cheerio doesn't click buttons just parses the given page
+			
 			$('.Grid-cell').each(function(i,element){
 
-				///TODO: "More" button on bottom of search page. Click it? Ignore it?
+				
 
 				const $image = $(element).find('.Image-img img').attr('src'); //gets reference to image
+				//sku is the number id number for each clock (e.g. 610644)
 				const $sku = $image.match(/jpg\/(.*).jpg/)[1];
 
 				//retrieves the Kieninger format for clocks
@@ -89,6 +90,7 @@ function searchInventory(searchTerm){
 						};
 					}
 				}
+
 				//remove the null returns
 				if(result){
 				searchResults.push(result);

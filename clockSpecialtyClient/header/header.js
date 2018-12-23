@@ -4,7 +4,7 @@ $('#headerHere').load("../header/header.html", function (res,status,xhr){
     if(status != "error"){
     	const form = document.querySelector('form');
 		const searchInput = document.querySelector('input');
-		const mainNavBar = document.querySelector('#headerMainNavBar');
+		// const mainNavBar = document.querySelector('#headerMainNavBar');
 		const homeClicked = document.querySelector('#homeButton');
 		const resultsList = document.querySelector('#results');  //get ID
 
@@ -13,17 +13,17 @@ $('#headerHere').load("../header/header.html", function (res,status,xhr){
 
 		//Event listener for links in main Nav Bar
 		//Take the id and send it to displayContent
-		mainNavBar.addEventListener('click', function(event){
-			event.preventDefault();
+		// mainNavBar.addEventListener('click', function(event){
+		// 	event.preventDefault();
 
-			let pageClicked = event.target.id;
-			console.log("clicked: " + pageClicked);
+		// 	let pageClicked = event.target.id;
+		// 	console.log("clicked: " + pageClicked);
 
-			if(pageClicked != 'headerMainNavBar'){
+		// 	if(pageClicked != 'headerMainNavBar'){
 
-				$('.container').load("./"+pageClicked + ".html");
-			}
-		});
+		// 		$('.container').load("./"+pageClicked + ".html");
+		// 	}
+		// });
 
 		//search bar event listener
 		// form.addEventListener('submit' , formSubmitted);
