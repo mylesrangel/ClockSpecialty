@@ -13,6 +13,10 @@ cardSelection.addEventListener('click', function(event){
 	}
 
 	console.log("event Listener " + cardClicked);
+
+
+
+
 	
 
 })
