@@ -15,7 +15,7 @@
 			margin-left: 100px;
 			margin-right: 100px;
 			/*prevents stacking (just shrinks the size) keeps text on one line*/
-			white-space: nowrap;
+			/*white-space: nowrap;*/
 
 /*			background-image: url("../media/backgroundPicThree.jpg");
 			background-repeat: no-repeat;*/
@@ -339,12 +339,19 @@
 			
 			html{
 				width: 87%;
+				height: 100%;
+			}
+			body{
+				margin-right: .5em;
 
 			}
 
 			main{
 				margin-top: 2em;
-				padding-bottom: 100px;
+				padding-bottom: 175px;
+				/*for Footer*/
+				overflow: auto;
+				padding-bottom: 175px;
 
 			}
 
@@ -358,18 +365,35 @@
 			#storeInformation{
 				font-size: x-small;
 			}
+			#address{
+				margin-right: 6em;
+			}
+			#address2{
+				margin-right:;
+			}
 			#searchBar{
 				font-size: x-small;
 			}
 			#phoneNumber{
 				font-size: x-small;
 			}
-
+			#search{
+				width: 9vw;
+				height: 7vw;
+			}
+			#searchButton{
+				width: 13vw;
+				height: 7vw;
+			}
+			#phoneNumber{
+				white-space: nowrap;
+			}
+			/* Main Content */
 			h1{
 				font-size: large;
 			}
 
-			/* Main Content */
+			
 			#purchaseClock{
 		
 			}
@@ -378,16 +402,38 @@
 				height: auto;
 
 			}
+			#clockDescription{
 
+			}
+			#clockRepairFAQ{
 
+			}
+			#clockRepairFAQ a{
+				font-size: 14px;
+			}
 
 			/*Footer Content*/
-
+			#footerHere{
+				position: relative;
+				margin-top: -175px;
+				padding-top: 175px;
+				height: 175px;
+				clear: both;
+			}
+			#footerFirstRow{
+				margin-right: 1em;
+				margin-left: .75em;
+			}
+			#storeHours{
+				white-space: nowrap;
+				margin-right: 4em;
+			}
+		
 			#TOS{
 				font-size: small;
 				position: relative;
 				width: 100%;
-				white-space: normal;
+
 			}
 			#TOS p{
 				position: relative;
@@ -396,7 +442,9 @@
 			#TOS h5{
 				margin-bottom: 1em;
 			}
-			
+			#footerMainNavBar{
+				white-space: nowrap;
+			}
 		}
 
 	</style>
