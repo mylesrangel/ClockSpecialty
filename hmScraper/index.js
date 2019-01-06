@@ -1,6 +1,6 @@
 
 const express = require('express');
-const scraper = require('./scraper.js')
+const scraper = require('./scraper.js');
 const app = express();
 const cors = require('cors');
 
@@ -30,7 +30,6 @@ app.get('/clock/:SKU',(req,res) =>{
 });
 
 const port = process.env.PORT || 3000;
-
 app.listen(port, () =>{
 	console.log(`Listening on ${port}`);
 });

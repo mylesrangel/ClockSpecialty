@@ -1,7 +1,9 @@
 
 	const resultsList = document.querySelector('#results');  //get ID
 
+	// Base URL = backend url (used 'zeit now' for quick testing)
 	const BASE_URL = 'https://clockspecialtyback.now.sh';
+	// LIVE URL = the actual url you are using (Not 'needed' other than referecnce)
 	const LIVE_URL = 'https://clockspecialty.now.sh';
 
 	//get current url and parse it for search term

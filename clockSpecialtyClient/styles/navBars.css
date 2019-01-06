@@ -346,12 +346,11 @@
 
 			}
 
-			main{
+			main.container{
 				margin-top: 2em;
 				padding-bottom: 175px;
 				/*for Footer*/
 				overflow: auto;
-				padding-bottom: 175px;
 
 			}
 
@@ -415,9 +414,9 @@
 			/*Footer Content*/
 			#footerHere{
 				position: relative;
-				margin-top: -175px;
-				padding-top: 175px;
-				height: 175px;
+				margin-top: -85px;
+				/*padding-top: 175px;*/
+				/*height: 175px;*/
 				clear: both;
 			}
 			#footerFirstRow{

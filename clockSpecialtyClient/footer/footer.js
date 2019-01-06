@@ -23,14 +23,3 @@ $('#footerHere').load("../footer/footer.html", function(response, status, xhr){
 	}
 
 });
-
-
-	///place footer at the bottom of the page
-	//if view port is not scrolling
-		//set height of main.container to 40vw;
-
-		console.log("in Footer: ");
-
-		console.log("viewport height : " + document.body.scrollHeight);
-
-		console.log("viewport height : " + window.innerHeight);
